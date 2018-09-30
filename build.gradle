@@ -9,7 +9,7 @@ repositories {
 
 version = '1.0-SNAPSHOT'
 sourceCompatibility = '1.8'
-mainClassName = 'io.vertx.core.Launcher'
+mainClassName = 'io.vertx.starter.Launcher'
 
 def vertxVersion = '3.5.2'
 def mainVerticleName = 'io.vertx.starter.MainVerticle'
@@ -25,7 +25,7 @@ dependencies {
 shadowJar {
   classifier = 'fat'
   manifest {
-      attributes "Main-Verticle": mainVerticleName
+      attributes "Main-Verticle": mainVerticleName, "Main-Launcher": mainClassName
   }
   mergeServiceFiles {
     include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
